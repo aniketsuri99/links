@@ -2,9 +2,35 @@
 <html>
 
   <head>
+    <meta charset="utf-8">
+    <style>
+      .background--custom {
+        background-color: #FFFFFF;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        overflow: hidden;
+        z-index: -2;
+        top: 0;
+        left: 0;
+      }
+      canvas#canvas {
+        z-index: -1;
+        position: absolute;
+        width: 100%;
+        height: 500%;
+        transform: rotate(-12deg) scale(2) translateY(-56%);
+        --gradient-color-1: #ef008f; 
+        --gradient-color-2: #6ec3f4; 
+        --gradient-color-3: #7038ff;  
+        --gradient-color-4: #ffba27;
+        --gradient-speed: 0.000006;
+      }
+    </style>
     
-    <title>"My Link in Bio"</title>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Roboto:400,700|Roboto+Condensed:400,700" rel="stylesheet">
 
 
     <style>
@@ -12,6 +38,7 @@
       {
         padding-top: 40px;
         padding-bottom: 40PX;
+        
       }
     </style>
 
@@ -39,9 +66,10 @@
   border-radius: 48px;
   object-fit: cover;
   
+  
 }
 body {
-  background-color: #16161a;
+  background-color: #1a1a16;
   display: flex;
   justify-content: center;
 }
@@ -50,6 +78,10 @@ body {
   color: #fffffe;
   display: flex;
   justify-content: center;
+  font-family: 'Roboto Condensed', sans-serif;
+font-size: 35px;
+font-family: 'Cabin', sans-serif;
+font-size: 16px;
 }
 
 .social-icons a {
@@ -68,17 +100,22 @@ body {
 }
 
 .link {
-  background-color: #7f5af0;
+  background-color: rgba(99, 76, 167, 0.5);
   display: flex;
   align-items: center;
+  border-radius: 15px;
   
 }
 
 .link a {
-  color: #001e1d;
+  color: #fefefe;
   text-decoration: none;
   text-align: center;
   flex-grow: 1;
+  font-family: 'Roboto Condensed', sans-serif;
+font-size: 35px;
+font-family: 'Cabin', sans-serif;
+font-size: 16px;
   
 }
 .items {
@@ -96,11 +133,19 @@ body {
   </head>
 
   <body>
+    <div class="background--custom">
+      <canvas id="canvas" />
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/greentfrapp/pocoloco@minigl/minigl.js"></script>
+    <script>
+    var gradient = new Gradient();
+    gradient.initGradient("#canvas");
+    </script>
   
    <div class="items">
   
     <DIV class="banner">
-      <img src="profile-pic.jpg" alt="Aniket Suri Headshot" class="banner-image">
+      <img src="profile-pic.jpeg" alt="Aniket Suri Headshot" class="banner-image">
     </DIV>
 
     <div class="name" style="font-size:30px">
@@ -116,7 +161,7 @@ body {
         <i class="fa-brands fa-linkedin"></i>
       </a>
 
-      <a href="https://www.instagram.com/surianiket/" target="_blank">
+      <a href="https://www.instagram.com/snapsofani/" target="_blank">
         <i class="fa-brands fa-instagram"></i>
       </a>
 
